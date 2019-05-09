@@ -1,6 +1,7 @@
 require "BCFF/version"
+require "BCFF/cli"
+require "BCFF/tiers"
 
-module BCFF
-  class Error < StandardError; end
-  # Your code goes here...
-end
+require "nokogiri"
+require "pry"
+require "open-uri"
