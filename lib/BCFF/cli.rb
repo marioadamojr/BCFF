@@ -10,7 +10,7 @@ class BCFF::CLI
 
   def greeting
     puts "Welcome"
-    # @all_positions = ["qb", "rb", "wr", "te", "flex", "k", "def"]
+    @all_positions = ["qb", "rb", "wr", "te", "flex", "k", "def"]
 
     @positions = {}
     @positions[:qb] = BCFF::Tiers.qb
@@ -42,10 +42,13 @@ class BCFF::CLI
   def tiers
     input = nil
     while input != "exit"
-      input = gets.strip.downcase
-      puts "Enter the position you want to see the tier list for, or type exit to close the program."
+      puts "Enter the position you want to see the tier list for.\nTo see a list of possible positions, type list. To close the program, type exit."
 
-      if input == "qb"
+      input = gets.strip.downcase
+
+      if input == "list"
+        puts @all_positions
+      elsif input == "qb"
         puts "Here are #{input}s"
         puts @positions[:"#{input}"]
       elsif input == "rb"
