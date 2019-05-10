@@ -41,9 +41,9 @@ class BCFF::CLI
 
   def tiers
     input = nil
-    puts "Enter the position you want to see the tier list for, or type exit to close the program."
     while input != "exit"
       input = gets.strip.downcase
+      puts "Enter the position you want to see the tier list for, or type exit to close the program."
 
       if input == "qb"
         puts "Here are #{input}s"
