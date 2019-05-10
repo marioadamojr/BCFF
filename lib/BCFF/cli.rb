@@ -15,17 +15,33 @@ class BCFF::CLI
 
   def tiers
     input = nil
+    puts "Enter the position you want to see the tier list for, or type exit to close the program."
     while input != "exit"
-      puts "Enter the position you want to see the tier list for, or type exit to close the program."
       input = gets.strip.downcase
 
       if input == "qb"
         puts "Here are #{input}s"
-        scrape_"#{input}"
+        # scrape_qb
       elsif input == "rb"
-        puts "#{input}"
+        puts "Here are #{input}s"
+        # scrape_rb
+      elsif input == "wr"
+        puts "Here are #{input}s"
+        # scrape_wr
+      elsif input == "te"
+        puts "Here are #{input}s"
+        # scrape_te
+      elsif input == "flex"
+        puts "Here are #{input}s"
+        # scrape_flex
+      elsif input == "k"
+        puts "Here are #{input}s"
+        # scrape_k
+      elsif input == "def"
+        puts "Here are #{input}s"
+        # scrape_def
       else
-        "Please enter a valid position: qb, rb, wr, te, flex, k, def, or exit"
+        puts "Please enter a valid position: qb, rb, wr, te, flex, k, def, or exit"
       end
     end
   end
@@ -34,7 +50,5 @@ class BCFF::CLI
     puts "Thank you for checking out my CLI!"
   end
 
-  def scrape_qb
-  end
 
 end
