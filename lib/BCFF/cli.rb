@@ -20,6 +20,23 @@ class BCFF::CLI
     @positions[:flex] = BCFF::Tiers.flex
     @positions[:k] = BCFF::Tiers.k
     @positions[:def] = BCFF::Tiers.def
+
+    # below is a WIP
+    # @all_positions = ["qb", "rb", "wr", "te", "flex", "k", "def"]
+    # @all_tiers = [
+    #   BCFF::Tiers.qb,
+    #   BCFF::Tiers.rb,
+    #   BCFF::Tiers.wr,
+    #   BCFF::Tiers.te,
+    #   BCFF::Tiers.flex,
+    #   BCFF::Tiers.k,
+    #   BCFF::Tiers.def]
+    #
+    # @positions = {}
+    #
+    # @all_positions.each_with_index do |p, i|
+    #   @positions[:p] = @all_tiers[i]
+    # end
   end
 
   def tiers
