@@ -1,8 +1,6 @@
 # BCFF
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/BCFF`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Hello! This is my first project for Flatiron School. It scrapes borischen.com for fantasy football tier lists based on position and displays those lists.
 
 ## Installation
 
@@ -22,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+This will best be used during the football season as a way to get up to date position tier lists. In the mean time, you can run it to see what the tier lists looked like for last season.
 
 ## Development
 
