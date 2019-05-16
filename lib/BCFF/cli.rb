@@ -33,10 +33,15 @@ class BCFF::CLI
         puts @all_positions
       elsif input == "qb"
         puts "Here are #{input}s"
-        puts #puts all players in All_Players that equal QB (find_all/select)
+        Players.all.each do |i|
+          if i.position == "QB"
+            puts i.players_list
+          end
+        end
+        #puts all players in All_Players that equal QB (find_all/select)
       elsif input == "rb"
         puts "Here are #{input}s"
-        puts @positions[:"#{input}"]
+        puts Players.all.find_all {|i| i.position == "RB"}
       elsif input == "wr"
         puts "Here are #{input}s"
         puts @positions[:"#{input}"]

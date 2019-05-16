@@ -16,14 +16,12 @@ end
 class BCFF::Tiers
 
   def self.qb
-    # ["QB1", "QB2"]
     doc = Nokogiri::HTML(open("https://s3-us-west-1.amazonaws.com/fftiers/out/text_QB.txt")).text
-    # binding.pry
     qbs = Players.new
     qbs.position = "QB"
     qbs.players_list = doc
     qbs.save
-    binding.pry
+    # binding.pry
   end
 
   def self.rb
