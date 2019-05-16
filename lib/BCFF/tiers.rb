@@ -1,11 +1,29 @@
 # get the tiers for each position
+class Players
+  attr_accessor :position, :players_list
+  @@all_players = []
+
+  def self.all
+    @@all_players
+  end
+
+  def save
+    @@all_players << self
+  end
+
+end
+
 class BCFF::Tiers
 
   def self.qb
     # ["QB1", "QB2"]
     doc = Nokogiri::HTML(open("https://s3-us-west-1.amazonaws.com/fftiers/out/text_QB.txt")).text
     # binding.pry
-    doc
+    qbs = Players.new
+    qbs.position = "QB"
+    qbs.players_list = doc
+    qbs.save
+    binding.pry
   end
 
   def self.rb
