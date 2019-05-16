@@ -12,7 +12,6 @@ class BCFF::CLI
     puts "Welcome"
     @all_positions = ["qb", "rb", "wr", "te", "flex", "kicker", "defense"]
 
-    # old way
     @positions = {}
     @positions[:qb] = BCFF::Tiers.qb
     @positions[:rb] = BCFF::Tiers.rb
