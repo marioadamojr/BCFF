@@ -10,16 +10,17 @@ class BCFF::CLI
 
   def greeting
     puts "Welcome"
-    @all_positions = ["qb", "rb", "wr", "te", "flex", "k", "def"]
+    @all_positions = ["qb", "rb", "wr", "te", "flex", "kicker", "defense"]
 
-    @positions = {}
-    @positions[:qb] = BCFF::Tiers.qb
-    @positions[:rb] = BCFF::Tiers.rb
-    @positions[:wr] = BCFF::Tiers.wr
-    @positions[:te] = BCFF::Tiers.te
-    @positions[:flex] = BCFF::Tiers.flex
-    @positions[:k] = BCFF::Tiers.k
-    @positions[:def] = BCFF::Tiers.def
+    # old way
+    # @positions = {}
+    # @positions[:qb] = BCFF::Tiers.qb
+    # @positions[:rb] = BCFF::Tiers.rb
+    # @positions[:wr] = BCFF::Tiers.wr
+    # @positions[:te] = BCFF::Tiers.te
+    # @positions[:flex] = BCFF::Tiers.flex
+    # @positions[:k] = BCFF::Tiers.k
+    # @positions[:def] = BCFF::Tiers.def
   end
 
   def tiers
@@ -32,33 +33,61 @@ class BCFF::CLI
       if input == "list"
         puts @all_positions
       elsif input == "qb"
+        # old way
+        # puts "Here are #{input}s"
+        # puts @positions[:"#{input}"]
         puts "Here are #{input}s"
         Players.all.each do |i|
+          binding.pry
           if i.position == "QB"
             puts i.players_list
           end
+          binding.pry
         end
-        #puts all players in All_Players that equal QB (find_all/select)
       elsif input == "rb"
         puts "Here are #{input}s"
-        puts Players.all.find_all {|i| i.position == "RB"}
+        Players.all.each do |i|
+          if i.position == "RB"
+            puts i.players_list
+          end
+        end
       elsif input == "wr"
         puts "Here are #{input}s"
-        puts @positions[:"#{input}"]
+        Players.all.each do |i|
+          if i.position == "WR"
+            puts i.players_list
+          end
+        end
       elsif input == "te"
         puts "Here are #{input}s"
-        puts @positions[:"#{input}"]
+        Players.all.each do |i|
+          if i.position == "TE"
+            puts i.players_list
+          end
+        end
       elsif input == "flex"
         puts "Here are #{input}s"
-        puts @positions[:"#{input}"]
-      elsif input == "k"
+        Players.all.each do |i|
+          if i.position == "Flex"
+            puts i.players_list
+          end
+        end
+      elsif input == "kicker"
         puts "Here are #{input}s"
-        puts @positions[:"#{input}"]
-      elsif input == "def"
+        Players.all.each do |i|
+          if i.position == "Kicker"
+            puts i.players_list
+          end
+        end
+      elsif input == "defense"
         puts "Here are #{input}s"
-        puts @positions[:"#{input}"]
+        Players.all.each do |i|
+          if i.position == "Defense"
+            puts i.players_list
+          end
+        end
       else
-        puts "Please enter a valid position: qb, rb, wr, te, flex, k, def, or exit"
+        puts "Please enter a valid position: qb, rb, wr, te, flex, kicker, defense, or exit"
       end
     end
   end

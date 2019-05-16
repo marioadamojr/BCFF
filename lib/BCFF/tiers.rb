@@ -21,7 +21,7 @@ class BCFF::Tiers
     qbs.position = "QB"
     qbs.players_list = doc
     qbs.save
-    # binding.pry
+    binding.pry
   end
 
   def self.rb
@@ -64,7 +64,7 @@ class BCFF::Tiers
     # ["k"]
     doc = Nokogiri::HTML(open("https://s3-us-west-1.amazonaws.com/fftiers/out/text_K.txt")).text
     kickers = Players.new
-    kickers.position = "Kickers"
+    kickers.position = "Kicker"
     kickers.players_list = doc
     kickers.save
   end
@@ -73,9 +73,8 @@ class BCFF::Tiers
     # ["def"]
     doc = Nokogiri::HTML(open("https://s3-us-west-1.amazonaws.com/fftiers/out/text_DST.txt")).text
     defenses = Players.new
-    defenses.position = "Defenses"
+    defenses.position = "Defense"
     defenses.players_list = doc
     defenses.save
   end
-
 end
