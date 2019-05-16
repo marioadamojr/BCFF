@@ -13,14 +13,14 @@ class BCFF::CLI
     @all_positions = ["qb", "rb", "wr", "te", "flex", "kicker", "defense"]
 
     # old way
-    # @positions = {}
-    # @positions[:qb] = BCFF::Tiers.qb
-    # @positions[:rb] = BCFF::Tiers.rb
-    # @positions[:wr] = BCFF::Tiers.wr
-    # @positions[:te] = BCFF::Tiers.te
-    # @positions[:flex] = BCFF::Tiers.flex
-    # @positions[:k] = BCFF::Tiers.k
-    # @positions[:def] = BCFF::Tiers.def
+    @positions = {}
+    @positions[:qb] = BCFF::Tiers.qb
+    @positions[:rb] = BCFF::Tiers.rb
+    @positions[:wr] = BCFF::Tiers.wr
+    @positions[:te] = BCFF::Tiers.te
+    @positions[:flex] = BCFF::Tiers.flex
+    @positions[:kicker] = BCFF::Tiers.k
+    @positions[:defense] = BCFF::Tiers.def
   end
 
   def tiers
@@ -33,16 +33,16 @@ class BCFF::CLI
       if input == "list"
         puts @all_positions
       elsif input == "qb"
+        # binding.pry
         # old way
         # puts "Here are #{input}s"
         # puts @positions[:"#{input}"]
         puts "Here are #{input}s"
         Players.all.each do |i|
-          binding.pry
           if i.position == "QB"
             puts i.players_list
           end
-          binding.pry
+          # binding.pry
         end
       elsif input == "rb"
         puts "Here are #{input}s"

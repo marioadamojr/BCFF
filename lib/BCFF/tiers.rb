@@ -21,7 +21,7 @@ class BCFF::Tiers
     qbs.position = "QB"
     qbs.players_list = doc
     qbs.save
-    binding.pry
+    # binding.pry
   end
 
   def self.rb

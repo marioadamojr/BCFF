@@ -1,6 +1,6 @@
 require "BCFF/version"
-require "BCFF/cli"
 require "BCFF/tiers"
+require "BCFF/cli"
 
 require "nokogiri"
 require "pry"
