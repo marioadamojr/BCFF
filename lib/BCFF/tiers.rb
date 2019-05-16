@@ -29,37 +29,55 @@ class BCFF::Tiers
   def self.rb
     # ["rb1", "rb2"]
     doc = Nokogiri::HTML(open("https://s3-us-west-1.amazonaws.com/fftiers/out/text_RB.txt")).text
-    doc
+    rbs = Players.new
+    rbs.position = "RB"
+    rbs.players_list = doc
+    rbs.save
   end
 
   def self.wr
     # ["wr"]
     doc = Nokogiri::HTML(open("https://s3-us-west-1.amazonaws.com/fftiers/out/text_WR.txt")).text
-    doc
+    wrs = Players.new
+    wrs.position = "WR"
+    wrs.players_list = doc
+    wrs.save
   end
 
   def self.te
     # ["te"]
     doc = Nokogiri::HTML(open("https://s3-us-west-1.amazonaws.com/fftiers/out/text_TE.txt")).text
-    doc
+    tes = Players.new
+    tes.position = "TE"
+    tes.players_list = doc
+    tes.save
   end
 
   def self.flex
     # ["flex"]
     doc = Nokogiri::HTML(open("https://s3-us-west-1.amazonaws.com/fftiers/out/text_Flex.txt")).text
-    doc
+    flexs = Players.new
+    flexs.position = "Flex"
+    flexs.players_list = doc
+    flexs.save
   end
 
   def self.k
     # ["k"]
     doc = Nokogiri::HTML(open("https://s3-us-west-1.amazonaws.com/fftiers/out/text_K.txt")).text
-    doc
+    kickers = Players.new
+    kickers.position = "Kickers"
+    kickers.players_list = doc
+    kickers.save
   end
 
   def self.def
     # ["def"]
     doc = Nokogiri::HTML(open("https://s3-us-west-1.amazonaws.com/fftiers/out/text_DST.txt")).text
-    doc
+    defenses = Players.new
+    defenses.position = "Defenses"
+    defenses.players_list = doc
+    defenses.save
   end
 
 end
